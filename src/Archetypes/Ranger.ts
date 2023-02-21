@@ -3,12 +3,12 @@ import Archetype from './Archetype';
 
 class Ranger extends Archetype {
   private _energyType: EnergyType;
-  private static _mageInstances = 0;
+  private static _rangerInstances = 0;
 
   constructor(name: string) {
     super(name);
     this._energyType = 'stamina';
-    Ranger._mageInstances += 1;
+    Ranger._rangerInstances += 1;
   }
 
   override get energyType(): EnergyType {
@@ -16,7 +16,7 @@ class Ranger extends Archetype {
   }
 
   static override createdArchetypeInstances(): number {
-    return Ranger._mageInstances;
+    return Ranger._rangerInstances;
   }
 }
 

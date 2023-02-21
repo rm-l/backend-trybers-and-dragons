@@ -3,12 +3,12 @@ import Archetype from './Archetype';
 
 class Necromancer extends Archetype {
   private _energyType: EnergyType;
-  private static _mageInstances = 0;
+  private static _necromancerInstances = 0;
 
   constructor(name: string) {
     super(name);
     this._energyType = 'mana';
-    Necromancer._mageInstances += 1;
+    Necromancer._necromancerInstances += 1;
   }
 
   override get energyType(): EnergyType {
@@ -16,7 +16,7 @@ class Necromancer extends Archetype {
   }
 
   static override createdArchetypeInstances(): number {
-    return Necromancer._mageInstances;
+    return Necromancer._necromancerInstances;
   }
 }
 
